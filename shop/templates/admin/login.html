@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block content %}
 {% include "_messages.html" %}
+ 
 <div class="container">
   <div class="login-form">
     <!--Login form-->
@@ -15,9 +16,20 @@
                 {% endfor %}
                 </div>
                 <div style="margin-top: 20px;">
-                    <input type="submit" value="Login" class="btn btn-info" />
+                    <input type="submit" value="Login" class="btn btn-info" title="Submit Login Form" />
                 </div>
             </form>
+            <!-- Social Authentication Buttons -->
+            <div class="social-login">
+                <p class="text-center">Or log in with:</p>
+                <div class="text-center">
+                  <a href="{{ url_for('admin.login_google') }}" class="btn-google">Login with Google</a>
+                </div>
+            </div>
+            <div class="already-account">
+                <p>Don't have an account? <a href="{{ url_for('admin.register') }}">Register here</a>.</p>
+                <a href="{{url_for('admin.reset_password')}}">Forgot Password</a>
+            </div>
             <div style="margin-top: 6rem;"></div>
         </div>
         <div class="col-md-4"></div>

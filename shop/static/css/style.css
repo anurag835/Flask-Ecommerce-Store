@@ -1,0 +1,37 @@
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .social-login p {
+    margin-bottom: 10px;
+  }
+
+  .social-login .btn-google {
+    display: inline-block;
+    width: 360px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #4285F4; 
+    color: #ffffff;
+    border: 1px solid #4285F4; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .social-login .btn-google:hover {
+    background-color: #3367D6; 
+  }
+
+  .already-account {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .already-account a {
+    text-decoration: none;
+  }

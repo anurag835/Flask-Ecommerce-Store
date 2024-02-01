@@ -12,6 +12,10 @@
     />
     <link
       rel="stylesheet"
+      href="{{url_for('static' ,filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
       href="{{url_for('static' ,filename='css/font-awesome.min.css')}}"
     />
     <link
@@ -61,44 +65,10 @@
   </head>
   <!--/head-->
 
-  <!--style-->
-  <style>
-    .navbar-nav > li.active > a {
-      color: #fe980f;
-      background: transparent;
-      border-bottom: none;
-    }
-  </style>
-
   <body>
     <header id="header">
-      <!--header-->
-      <div class="header_top">
-        <!--header_top-->
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="social-icons pull-right">
-                <ul class="nav navbar-nav">
-                  <li>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/header_top-->
-
       <div class="header-middle">
-        <!--header-middle-->
+        <!--/header_top-->
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
@@ -153,10 +123,11 @@
               <div class="mainmenu pull-left">
                 <ul class="nav navbar-nav collapse navbar-collapse">
                   <li><a href="#" class="active">Home</a></li>
+                  {% if request.endpoint != 'admin.reset_password' %}
                   <li class="dropdown">
                     <a href="#">Shop<i class="fa fa-angle-down"></i></a>
                     <ul role="menu" class="sub-menu">
-                      <li><a href="#">Products</a></li>
+                      <li><a href="{{url_for('admin.home')}}">Products</a></li>
                       <li><a href="#">Cart</a></li>
                       {% if current_user.is_authenticated %}
                         <li><a href="{{ url_for('admin.logout') }}">Logout</a></li>
@@ -165,6 +136,7 @@
                       {% endif %}
                     </ul>
                   </li>
+                  {% endif %}
                   <li><a href="#">Contact</a></li>
                 </ul>
               </div>
@@ -229,7 +201,7 @@
         <div class="container">
           <div class="row">
             <p class="pull-left">
-              Copyright © 2013 E-SHOPPER Inc. All rights reserved.
+              Copyright © 2023 E-SHOPPER Inc. All rights reserved.
             </p>
             <p class="pull-right">
               Designed by
